@@ -11,7 +11,18 @@ Ecris un programme qui :
 */
 
   
-  
-
+  let chien = {
+      nom: 'Tobby',
+      race: 'Border Collie',
+      couleur: 'bleu merle tricolore',
+      grogner(){
+          return `Grrr ! Grrr !`
+      },
+      aboyer(){
+          return `Wah ! Wah !`
+      }
+  }
+console.log(`${chien.nom} est un ${chien.race} de couleur ${chien.couleur}`);
+console.log(`Tiens, un chat ! ${chien.nom} aboie : ${chien.aboyer()}`);
 
   

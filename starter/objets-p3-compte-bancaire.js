@@ -8,7 +8,22 @@ OBJETS - PRÉPA 3 : Modélisation d'un compte bancaire
 	- une méthode decrire() renvoyant la description du compte.
 2. Utilise cet objet pour
 	- afficher sa description,
-	- le créditer de 250,
-	- puis le débiter de 80,
+	- le créditer de 250, +250
+	- puis le débiter de 80, -80
 	- et enfin afficher de nouveau sa description.
 */
+
+let compte = {
+    titulaire : 'Alex',
+    solde : 0,
+    crediter(somme){
+        compte.solde += somme;
+    },
+    decrire() {
+        return `Ce compte appartient à ${compte.titulaire} est à un solde de ${compte.solde}`;
+    }
+}
+console.log(compte.decrire());
+compte.crediter(250);
+compte.crediter(-80);
+console.log(compte.decrire());

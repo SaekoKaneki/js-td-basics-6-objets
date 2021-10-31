@@ -23,7 +23,7 @@ const aurora = {
 
 // Ajoute à présent cette fonction à l'intérieur de l'objet aurora
 // => félicitations, tu viens d'ajouter une **méthode** à l'objet Aurora !
-const aurora = {
+const aurora2 = {
   nom: "Aurora",
   sante: 150,
   force: 25,
@@ -40,9 +40,9 @@ Un nouveau mot est apparu : le mot-clé 'this'.
 
 /*
 EXERCICE 1 : Ajoute une méthode calcAge à john qui calcule son age
-(en soustrayant sa date de naissance de 2019), le retorune et le stocke dans une propriété age.
+(en soustrayant sa date de naissance de 2019), le retourne et le stocke dans une propriété age.
 */
-var john = {
+let john = {
     firstName: 'John',
     lastName: 'Smith',
     birthYear: 1992,
@@ -50,7 +50,7 @@ var john = {
     job: 'teacher',
     isMarried: false,
     calcAge: function() {
-        return this.age = 2018 - this.birthYear;
+        return this.age = 2019 - this.birthYear;
     }
 };
 console.log(john);
@@ -64,8 +64,14 @@ EXERCICE 2 :
 - Ajoute une méthode à cet objet qui lui permet de calculer sa propre surface
 - Utilise cette méthode pour afficher sa surface dans la console
 */ 
-
-
+let rectangle = {
+    longueur : 5,
+    largeur : 3,
+    calcSurface: function (){
+        return this.longueur*this.largeur;
+    }
+}
+console.log(rectangle.calcSurface());
 
 
 

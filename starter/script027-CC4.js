@@ -16,3 +16,28 @@ Rappel: BMI = poids / taille^2 = poids / (taille * taille). (poids en kg and tai
 
 BONNE CHANCE 😀
 */
+let john={
+    Weight : 78,
+    Height : 1.69,
+    Name : 'John',
+    BMI(){
+       return this.Weight/[this.Height*this.Height];
+    }
+}
+let mark={
+    Weight : 92,
+    Height : 1.95,
+    Name : 'Mark',
+    BMI(){
+      return this.Weight/[this.Height*this.Height];
+    }
+}
+
+if(mark.BMI>john.BMI){
+    console.log(` ${mark.BMI} est plus élevé que ${john.BMI}`);
+}
+else if (mark.BMI<john.BMI){
+    console.log(` ${john.BMI} est plus élevé que ${mark.BMI}`);
+ }else{
+    console.log(`${john.BMI}et ${mark.BMI} sont ex aequo`);
+ }

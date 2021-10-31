@@ -21,7 +21,7 @@ const stylo = {
   marque: "Bic"
 };
 
-var monSmartPhone = {
+let monSmartPhone = {
 	modele: 'XS Max',
 	marque: 'Apple',
 	memoire: 512,
@@ -51,7 +51,7 @@ OBJET
 */
 
 /* Une PROPRIÉTÉ est une VARIABLE associée à un objet */
-const stylo = {
+const stylo2 = {
   type: "bille",
   couleur: "bleu",
   marque: "Bic"
@@ -65,7 +65,7 @@ représentant une proriété de mon objet stylo */
 // 1. Initialiser un nouvel objet
 
 // 1°) Première méthode d'initialisation : déclaration littérale
-var john = {
+let john = {
     firstName: 'John',
     lastName: 'Smith',
     birthYear: 1990,
@@ -78,15 +78,17 @@ var john = {
 EXERCICE 1 : 
 - Crée un objet 'moi' qui te présente et contient les propriétés suivantes :
 	nom, prenom, age, profession, nationalite
-- Affiche l'objet que tu viesn de créer dasn la console
+- Affiche l'objet que tu viens de créer dasn la console
 */
+let Me ={
+    nom:'Batta',
+    prenom: 'Gwen',
+    age: 22,
+    profession: 'étudiante',
+    nationalite: 'Belge'
 
-
-
-
-
-
-
+}
+console.log(Me);
 
 // 2. Accéder aux propriétés d'un objet
 
@@ -116,7 +118,7 @@ EXERCICE 2 :
 	en allant à chaque fois rechercher les propriétés dans l'ojet 'moi' que tu viens de créer
 */
 
-
+console.log(`Je m'appelle ${Me.nom} ${Me.prenom}, j'ai ${Me.age} ans, je suis ${Me.profession} et je suis ${Me.nationalite}`);
 
 
 
@@ -146,16 +148,17 @@ EXERCICE 3 :
 	en allant à chaque fois rechercher les propriétés dans l'objet 'moi' que tu viens de créer
 */
 
-
-
-
-
-
+Me.profession ='Web Developer';
+Me.age+=3;
+Me.isMarried = true;
+console.log(`Trois années se sont écoulées, je suis sorti(e) de l'école, il s'en est passé des choses…`);
+console.log(Me);
+console.log(`Je m'appelle ${Me.nom} ${Me.prenom}, j'ai  ${Me.age}  ans, je suis à présent un ${Me.profession} (métier) ${Me.nationalite}(nationalité) et je suis ${Me.isMarried} (état civil)`);
 
 
 /*
 EXERCICE 4 :
-- Crée un objet stylo qui possède trois priorétés :
+- Crée un objet stylo qui possède trois propriétés :
 	type (bille), couleur (bleu) et marque (bic)
 - Affiche chacune de ses propriétés dasn la console
 - Affiche "J'écris avec un stylo …(type) …(couleur) de marque …" 
@@ -166,16 +169,17 @@ EXERCICE 4 :
 - Ajoute une propriété "prix" avec la valeur 2.5
 - Affiche "Mon stylo coûte … euros"
 */
-
-
-
-
-
-
-
-
-
-
+let styloo = {
+    type:'Bille',
+    couleur:'Bleu',
+    marque: 'bic'
+}
+console.log(styloo);
+console.log(`J'écris avec un stylo ${styloo.type}, ${styloo.couleur} de marque ${styloo.marque}`);
+styloo.couleur = 'Rouge';
+console.log(`J'écris avec un stylo ${styloo.type}, ${styloo.couleur} de marque ${styloo.marque}`);
+styloo.prix = 2.5;
+console.log(`Mon stylo coûte ${styloo.prix} euros`);
 
 
 
@@ -184,7 +188,7 @@ EXERCICE 4 :
 // 1. Initialiser un nouvel objet (… petit retour en arrière pour compléter…)
 
 // 2°) Deuxième méthode d'initialisation : la syntaxe new Object()
-var jane = new Object();
+let jane = new Object();
 jane.firstName = 'Jane';
 jane.birthYear = 1969;
 jane['lastName'] = 'Smith';
