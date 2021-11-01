@@ -19,9 +19,9 @@ const mesFruits = {
   "Poire": .5,
   "Ananas": 3
 };
-
-
-
+for (const propMesFruits in mesFruits){
+  console.log("Le fruit " + propMesFruits + " coûte " + mesFruits[propMesFruits]+" €");
+}
 
 
 /*
@@ -35,12 +35,24 @@ const fruit = {
   "Variété": "Golden"
 };
 
-
-
-
+for (const propFruit in fruit){
+  console.log(propFruit +" : "+ fruit[propFruit]);
+}
 
 // Un mot est un objet de type String => ceci fonctionne également…
 /*
 EXERCICE 3 : 
 Parcours le mot "Bonjour" pour afficher séparément chacune de ses lettres
 */
+const Bonjour = {
+  Lettre1: "B",
+  Lettre2: "o",
+  Lettre3: "n",
+  Lettre4: "j",
+  Lettre5: "o",
+  Lettre6: "u",
+  Lettre7: "r"
+}
+for (const propLettre in Bonjour ){
+  console.log(Bonjour[propLettre]);
+}

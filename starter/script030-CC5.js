@@ -14,16 +14,32 @@ John aime laisser un pourboire de 20% quand la facture est inférieure à $50,
 Implémente un calculateur de pourboire en utilisant les objets et les boucles.
 1. Crée un objet avec un tableau pour les montants des factures
 2. Ajoute une méthode pour calculer le pourboire
-3. Cette méthode devrait inclre une boucle pour itérer à travers toutes les factures payées
+3. Cette méthode devrait inclure une boucle pour itérer à travers toutes les factures payées
     et faire le calcul du pourboire
 4. En sortie, crée 
     1°) un nouveau tableau qui contient toutes les factures
-    2°) un tableua qui contient les montants finaux payés (facture + pourboire).
+    2°) un tableau qui contient les montants finaux payés (facture + pourboire).
 AIDE : Commence avec deux tableaux vides en tant que propriétés 
-        et remplis-les dans la boucle
-
-
-BONUS (EXTRA) APRÈS AVOIR FINI :
+        et remplis-les dans la boucle*/
+let aFacture;
+const aCalculateur ={
+   aFacture : [124, 48, 268, 180 , 42],
+    pourboire(){
+       for (let i = 0; i<aFacture.length; i++) {
+           if (aFacture[i] < 50) {
+               console.log(aFacture[i] * 0.2);
+           } else if (aFacture[i] >= 50 && aFacture[i] < 200) {
+               console.log(aFacture[i] * 0.15);
+           } else {
+               console.log(aFacture[i] * 0.1);
+           }
+       }
+        return aFacture;
+    }
+}
+console.table(aCalculateur);
+console.log(aCalculateur.pourboire());
+/*BONUS (EXTRA) APRÈS AVOIR FINI :
 
 La famille de Mark est aussi partie en vacances, et est allée dans 4 restaurants differents.
 Les factures ont été de $77, $375, $110, et $45.
