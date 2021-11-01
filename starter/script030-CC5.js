@@ -21,24 +21,33 @@ Implémente un calculateur de pourboire en utilisant les objets et les boucles.
     2°) un tableau qui contient les montants finaux payés (facture + pourboire).
 AIDE : Commence avec deux tableaux vides en tant que propriétés 
         et remplis-les dans la boucle*/
-let aFacture;
+let aFacture =[];
+let aPourboires =[];
 const aCalculateur ={
-   aFacture : [124, 48, 268, 180 , 42],
-    pourboire(){
-       for (let i = 0; i<aFacture.length; i++) {
-           if (aFacture[i] < 50) {
-               console.log(aFacture[i] * 0.2);
-           } else if (aFacture[i] >= 50 && aFacture[i] < 200) {
-               console.log(aFacture[i] * 0.15);
+   Facture : [124, 48, 268, 180 , 42],
+    calculer(){
+       let iPourboires = 0;
+       for (let i = 0; i< aCalculateur.Facture.length; i++) {
+           if (this.Facture[i] < 50) {
+               iPourboires = (this.Facture[i] * 0.2);
+               aFacture.push(iPourboires + this.Facture[i]);
+               aPourboires.push(iPourboires);
+           } else if (this.Facture[i] >= 50 && this.Facture[i] < 200) {
+               iPourboires = (this.Facture[i] * 0.15);
+               aFacture.push(iPourboires + this.Facture[i]);
+               aPourboires.push(iPourboires);
            } else {
-               console.log(aFacture[i] * 0.1);
+               iPourboires = (this.Facture[i] * 0.1);
+               aFacture.push(iPourboires + this.Facture[i]);
+               aPourboires.push(iPourboires);
            }
        }
-        return aFacture;
     }
 }
-console.table(aCalculateur);
-console.log(aCalculateur.pourboire());
+aCalculateur.calculer();
+console.log("John :")
+console.table(aFacture);
+console.table(aPourboires);
 /*BONUS (EXTRA) APRÈS AVOIR FINI :
 
 La famille de Mark est aussi partie en vacances, et est allée dans 4 restaurants differents.
@@ -52,8 +61,58 @@ Mark aime laisser un pourboire de 20% quand la facture est moins de $100,
 INDICE : Boucle sur le tableau et, à chaque itération, stocke la somme courante dans une varaible
 (en commençant à 0). Une fois que tu as la somme du tableau, divise-la par le nombre d'éléments
 du tableau (c'est comme cela qu'on calcule une moyenne).
-7. Calcule le pourboire moyen our chaque famille
+7. Calcule le pourboire moyen pour chaque famille
 8. Affiche qui a payé le pourboire le plus élevé en moyenne.
 
 BONNE CHANCE 😀
 */
+let aFactureM =[];
+let aPourboiresM =[];
+const aCalculateurM ={
+    FactureM : [77, 375, 110, 45],
+    calculerM(){
+        let iPourboiresM = 0;
+        for (let i = 0; i< aCalculateurM.FactureM.length; i++) {
+            if (this.FactureM[i] < 100) {
+                iPourboiresM = (this.FactureM[i] * 0.2);
+                aFactureM.push(iPourboiresM + this.FactureM[i]);
+                aPourboiresM.push(iPourboiresM);
+            } else if (this.FactureM[i] >= 100 && this.FactureM[i] < 300) {
+                iPourboiresM = (this.FactureM[i] * 0.1);
+                aFactureM.push(iPourboiresM + this.FactureM[i]);
+                aPourboiresM.push(iPourboiresM);
+            } else {
+                iPourboiresM = (this.FactureM[i] * 0.25);
+                aFactureM.push(iPourboiresM + this.FactureM[i]);
+                aPourboiresM.push(iPourboiresM);
+            }
+        }
+    }
+}
+aCalculateurM.calculerM();
+console.log("Mark :")
+console.table(aFactureM);
+console.table(aPourboiresM);
+
+let SommeJ =0;
+aPourboires.forEach(element =>{
+    SommeJ+=element;
+})
+
+SommeJ/=(aPourboires.length);
+/*-------------------------------*/
+let SommeM=0;
+aPourboiresM.forEach(element =>{
+    SommeM+=element;
+})
+
+SommeM/=(aPourboiresM.length);
+
+/*-----------------------------*/
+if (SommeJ>SommeM){
+    console.log('John a payé le pourboire moyen le plus élévé');
+}else if (SommeJ===SommeM){
+    console.log('Mark et John ont payé le même pourboire moyen ');
+}else {
+    console.log('Mark a payé le pourboire moyen le plus élévé') ;
+}
